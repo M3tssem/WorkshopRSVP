@@ -1,0 +1,19 @@
+﻿@model WorkshopRSVP.Models.Rsvp
+
+@{
+    ViewData["Title"] = "Confirmation";
+}
+
+<h1>Registration Confirmed</h1>
+
+<h3>@ViewData["Message"]</h3>
+
+<ul>
+    <li><strong>Name:</strong> @Model.FullName</li>
+    <li><strong>Workshop:</strong> @Model.WorkshopTitle</li>
+    <li><strong>Needs Accommodation:</strong> @(Model.NeedsAccommodation ? "Yes" : "No")</li>
+</ul>
+
+<a asp-controller="Workshops" asp-action="Registrations" class="btn btn-primary">
+    View Registrations
+</a>
