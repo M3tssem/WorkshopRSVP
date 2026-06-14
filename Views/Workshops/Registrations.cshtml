@@ -1,0 +1,34 @@
+﻿@model List<WorkshopRSVP.Models.Rsvp>
+
+@{
+    ViewData["Title"] = "Registrations";
+}
+
+<h1>Registrations</h1>
+
+@if (Model.Count == 0)
+{
+        <p>No registrations yet.</p>
+}
+else
+{
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Workshop</th>
+                    <th>Accommodation</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var rsvp in Model)
+            {
+                        <tr>
+                            <td>@rsvp.FullName</td>
+                            <td>@rsvp.WorkshopTitle</td>
+                            <td>@(rsvp.NeedsAccommodation ? "Yes" : "No")</td>
+                        </tr>
+            }
+            </tbody>
+        </table>
+}

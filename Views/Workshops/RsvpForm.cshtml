@@ -1,0 +1,36 @@
+﻿@model WorkshopRSVP.Models.Rsvp
+
+@{
+    ViewData["Title"] = "RSVP Form";
+}
+
+<h1>RSVP Form</h1>
+
+<form asp-controller="Workshops" asp-action="Confirm" method="post">
+
+    <div class="mb-3">
+        <label asp-for="FullName"></label>
+        <input asp-for="FullName" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="WorkshopTitle"></label>
+        <select asp-for="WorkshopTitle" class="form-control">
+            <option>Routing Basics</option>
+            <option>EF Core Intro</option>
+            <option>Razor Essentials</option>
+        </select>
+    </div>
+
+    <div class="form-check">
+        <input asp-for="NeedsAccommodation" class="form-check-input" />
+        <label asp-for="NeedsAccommodation" class="form-check-label"></label>
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-primary">
+        Submit RSVP
+    </button>
+
+</form>
